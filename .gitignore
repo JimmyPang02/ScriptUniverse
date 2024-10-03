@@ -1,0 +1,136 @@
+# 忽略操作系统生成的文件
+*.DS_Store
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# 忽略编译输出文件
+*.class
+*.pyc
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+
+# 忽略IDE和编辑器生成的文件
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.swn
+
+# 忽略日志文件
+*.log
+logs/
+
+# 忽略临时文件
+*.tmp
+*.temp
+*.swp
+
+# 忽略数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 忽略压缩文件
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# 忽略构建输出目录
+dist/
+build/
+out/
+target/
+
+# 忽略配置文件
+*.conf
+*.config
+
+# 忽略敏感信息文件
+*.env
+*.secret
+
+# 忽略虚拟环境目录
+venv/
+env/
+
+# 忽略Node.js项目中的node_modules目录
+node_modules/
+
+# 忽略Python项目中的__pycache__目录
+__pycache__/
+
+# 忽略Docker容器和镜像文件
+*.dockerignore
+Dockerfile
+docker-compose.yml
+
+# 忽略其他常见文件和目录
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.example
+.env.sample
+.env.template
+.env.dist
+.env.dev
+.env.prod
+.env.test
+.env.staging
+.env.local.example
+.env.local.sample
+.env.local.template
+.env.local.dist
+.env.local.dev
+.env.local.prod
+.env.local.test
+.env.local.staging
+.env.development
+.env.development.example
+.env.development.sample
+.env.development.template
+.env.development.dist
+.env.development.dev
+.env.development.prod
+.env.development.test
+.env.development.staging
+.env.test
+.env.test.example
+.env.test.sample
+.env.test.template
+.env.test.dist
+.env.test.dev
+.env.test.prod
+.env.test.test
+.env.test.staging
+.env.production
+.env.production.example
+.env.production.sample
+.env.production.template
+.env.production.dist
+.env.production.dev
+.env.production.prod
+.env.production.test
+.env.production.staging
+.env.staging
+.env.staging.example
+.env.staging.sample
+.env.staging.template
+.env.staging.dist
+.env.staging.dev
+.env.staging.prod
+.env.staging.test
+.env.staging.staging
