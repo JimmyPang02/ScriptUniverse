@@ -1,24 +1,24 @@
 import gradio as gr
 import os
-from download_paper import download_arxiv_paper  # 导入你的下载函数
+from download_paper import download_arxiv_paper  # Import your download function
 
 def download_papers(urls):
-    output_dir = 'G:\\paper'  # 默认使用G盘的paper目录
-    urls = urls.split(',')  # 将输入的URL字符串分割成列表
+    output_dir = 'G:\\paper'  # Default to the paper directory on the G drive
+    urls = urls.split(',')  # Split the input URL string into a list
     for url in urls:
         download_arxiv_paper(url.strip(), output_dir)
     return "Download completed!"
 
-# 示例脚本函数
+# Example script function
 def script_one(input_text):
-    # 脚本一的处理逻辑
+    # Processing logic for script one
     return f"Script one result: {input_text}"
 
 def script_two(input_text):
-    # 脚本二的处理逻辑
+    # Processing logic for script two
     return f"Script two result: {input_text}"
 
-# Gradio 界面定义
+# Gradio interface definition
 with gr.Blocks() as demo:
     gr.Markdown("## ScriptUniverse")
     
@@ -40,5 +40,5 @@ with gr.Blocks() as demo:
         btn_two = gr.Button("Run Script Two")
         btn_two.click(script_two, inputs=input_text_two, outputs=output_text_two)
 
-# 运行 Gradio 界面
-demo.launch()
+# Run Gradio interface
+demo.launch(ssl_verify=False)
