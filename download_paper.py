@@ -7,29 +7,34 @@ from tqdm import tqdm
 
 
 def download_arxiv_paper(url, output_dir):
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    
-    # Get paper title
-    title = soup.find('h1', class_='title mathjax').text.strip()
-    title = title.replace('Title:', '')
-    print(title)
-    
-    # Get publication date from URL
-    date = url.split('/')[-1][:4]  # Extract year and month information from URL
-    print(date)
+    if url.endswith('.pdf'):
+        pdf_url = url
+        new_filename = url.split('/')[-1]  # Use the original filename from the URL
+        print(new_filename)
+    else:
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Get paper title
+        title = soup.find('h1', class_='title mathjax').text.strip()
+        title = title.replace('Title:', '')
+        print(title)
+        
+        # Get publication date from URL
+        date = url.split('/')[-1][:4]  # Extract year and month information from URL
+        print(date)
 
-    # Handle illegal characters in filename :
-    safe_title = re.sub(r':\s*', '-', title)  # Replace colon and subsequent spaces with hyphen
-    print(safe_title)
-    
-    # Construct new filename
-    new_filename = f"{date}_{safe_title}.pdf"
-    print(new_filename)
-    
-    # Get PDF download link
-    pdf_url = url.replace('abs', 'pdf')
-    print(pdf_url)
+        # Handle illegal characters in filename :
+        safe_title = re.sub(r':\s*', '-', title)  # Replace colon and subsequent spaces with hyphen
+        print(safe_title)
+        
+        # Construct new filename
+        new_filename = f"{date}_{safe_title}.pdf"
+        print(new_filename)
+        
+        # Get PDF download link
+        pdf_url = url.replace('abs', 'pdf')
+        print(pdf_url)
     
     # Download PDF file
     proxies = {
@@ -62,7 +67,7 @@ def main():
     
     # Example usage
     arxiv_urls = [
-        'https://arxiv.org/abs/2307.04738',  # Replace with the URL of the paper you want to download
+        'https://robot-ma.github.io/MA_paper.pdf',  # Replace with the URL of the paper you want to download
         'https://arxiv.org/abs/2307.04739',  # You can add more URLs
     ]
     
